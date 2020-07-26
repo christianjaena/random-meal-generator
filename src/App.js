@@ -20,20 +20,69 @@ const AppWrapper = styled.div`
 	}
 `;
 
-const ResponsiveWrapper = styled.div `
+const ResponsiveWrapper = styled.div`
 	display: flex;
 
-	@media(max-width:500px) {
+	@media (max-width: 500px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
-`
+`;
+
+const AppContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+`;
+
+const AppWrapperWithPadding = styled(AppWrapper)`
+	padding: 15px;
+`;
+
+const FetchMealButton = styled.button`
+	height: 50px;
+	width: 200px;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	border-radius: 15px;
+	background-color: #212121;
+	color: white;
+	margin-bottom: 15px;
+	&:hover {
+		transform: scale(1.1);
+		transition: .2s ease-in-out;
+	}
+`;
+
+const ImageWrapper = styled(AppWrapper)`
+	width: 50%;
+	object-fit: cover;
+	overflow: hidden;
+	margin-right: 15px;
+	@media(max-width: 500px) {
+		width: 100%;
+		object-fit: cover;
+		overflow: hidden;
+		margin-right: 0;
+	}
+`;
+const RecipeWrapper = styled(AppWrapper)`
+	width: 50%;
+	padding: 15px;
+	@media(max-width: 500px) {
+		width: 100%;
+		padding: 15px;
+	}
+`;
 function App() {
 	const [state, setState] = useState(null);
 	const [ingredients, setIngredients] = useState([]);
 	const [isFetching, setFetching] = useState(true);
+
 	const fetchMeal = async () => {
 		setFetching(false);
 		const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -65,54 +114,25 @@ function App() {
 	}, [state]);
 
 	return (
-		<div
-			style={{
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-				flexDirection: 'column',
-			}}
-		>
-			<AppWrapper style={{ padding: '15px' }}>
+		<AppContainer>
+			<AppWrapperWithPadding>
 				<h1>Feeling Hungry?</h1>
 				<h2>Get a random meal by clicking below</h2>
-				<button
-					onClick={fetchMeal}
-					style={{
-						height: '50px',
-						width: '200px',
-						border: 'none',
-						outline: 'none',
-						fontSize: '18px',
-						borderRadius: '15px',
-						backgroundColor: '#212121',
-						color: 'white',
-						marginBottom: '15px'
-					}}
-				>
-					Get Meal🍔
-				</button>
-			</AppWrapper>
+				<FetchMealButton onClick={fetchMeal}>Get Meal <span role='img' aria-label='burger'>🍔</span></FetchMealButton>
+			</AppWrapperWithPadding>
 			{isFetching ? (
 				<div style={state ? { display: 'block' } : { display: 'none' }}>
 					<div style={{ width: '80vw' }}>
 						<ResponsiveWrapper>
-							<AppWrapper
-								style={{
-									width: '50%',
-									objectFit: 'cover',
-									overflow: 'hidden',
-									marginRight: '15px',
-								}}
-							>
+							<ImageWrapper>
 								<img
 									src={state?.strMealThumb}
 									alt='meal'
 									width='100%'
 									height='100%'
 								/>
-							</AppWrapper>
-							<AppWrapper style={{ width: '50%', padding: '15px' }}>
+							</ImageWrapper>
+							<RecipeWrapper>
 								<h1>{state?.strMeal}</h1>
 								<p>
 									<strong>Category:</strong> {state?.strCategory}
@@ -122,7 +142,7 @@ function App() {
 								</p>
 								<h2>Ingredients</h2>
 								<ul style={{ textAlign: 'left' }}>{ingredients}</ul>
-							</AppWrapper>
+							</RecipeWrapper>
 						</ResponsiveWrapper>
 						<div
 							style={{
@@ -165,7 +185,7 @@ function App() {
 					style={{ padding: '15px' }}
 				/>
 			)}
-		</div>
+		</AppContainer>
 	);
 }
 export default App;
