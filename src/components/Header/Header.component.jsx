@@ -21,10 +21,9 @@ const Header = ({ savedRecipes }) => {
 		>
 			{isDropdownOpen
 				? savedRecipes?.map((recipe, idx) => {
-						console.log(recipe.recipeName)
 						return (
 							<div key={idx}>
-								<p>{recipe?.recipeName}</p>
+								<p>{recipe}</p>
 							</div>
 						);
 				  })

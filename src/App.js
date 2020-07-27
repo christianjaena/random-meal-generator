@@ -19,7 +19,7 @@ const App = () => {
 	);
 
 	const saveRecipe = (recipe, pic) => {
-		let recipeToAdd = [...savedRecipes, { recipe, pic }];
+		let recipeToAdd = [...savedRecipes,  recipe];
 		setSavedRecipes(recipeToAdd);
 		localStorage.setItem('savedRecipes', recipeToAdd);
 	};
