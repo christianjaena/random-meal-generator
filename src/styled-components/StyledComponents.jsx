@@ -166,3 +166,6 @@ export const RecipeWrapper = styled(AppWrapper)`
 		padding: 15px;
 	}
 `;
+export const OptionalDisplayedContainer = styled.div`
+	display: ${props => (props.state ? 'block' : 'none')};
+`;

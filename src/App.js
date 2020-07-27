@@ -1,40 +1,47 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
-import useFetchMeal from './hooks/useFetchMeal'
+import useFetchMeal from './hooks/useFetchMeal';
+import FetchMeal from './components/FetchMeal/FetchMeal.component.jsx';
+import Header from './components/Header/Header.component.jsx';
 import {
 	AppContainer,
-	Header,
-	FetchMealButton,
 	ResponsiveWrapper,
 	ImageWrapper,
 	RecipeWrapper,
 	AppWrapper,
+	OptionalDisplayedContainer,
 } from './styled-components/StyledComponents.jsx';
 
 const App = () => {
-	const {fetchMeal, state, isFetching, ingredients} = useFetchMeal();
+	const { fetchMeal, state, isFetching, ingredients } = useFetchMeal();
+	const [savedRecipes, setSavedRecipes] = React.useState(
+		localStorage.getItem('savedRecipes')?.split(',') || []
+	);
 
+	const saveRecipe = (recipe, pic) => {
+		let recipeToAdd = [...savedRecipes, { recipe, pic }];
+		setSavedRecipes(recipeToAdd);
+		localStorage.setItem('savedRecipes', recipeToAdd);
+	};
+	
 	return (
 		<AppContainer>
-			<Header>
-				<h1>Feeling Hungry?</h1>
-				<h2>Get a random meal by clicking below</h2>
-				<FetchMealButton onClick={fetchMeal}>
-					Get Meal{' '}
-					<span role='img' aria-label='burger'>
-						🍔
-					</span>
-				</FetchMealButton>
-			</Header>
+			<Header savedRecipes={savedRecipes} />
+			<FetchMeal fetchMeal={fetchMeal} />
 			{isFetching ? (
-				<div style={state ? { display: 'block' } : { display: 'none' }}>
+				<OptionalDisplayedContainer state={state}>
 					<div style={{ width: '80vw' }}>
 						<ResponsiveWrapper>
 							<ImageWrapper>
-								<img src={state?.strMealThumb} alt='meal pic'/>
+								<img src={state?.strMealThumb} alt='meal pic' />
 							</ImageWrapper>
 							<RecipeWrapper>
 								<h1>{state?.strMeal}</h1>
+								<span
+									onClick={() => saveRecipe(state.strMeal, state.strMealThumb)}
+								>
+									Save
+								</span>
 								<p>
 									<strong>Category:</strong> {state?.strCategory}
 								</p>
@@ -76,7 +83,7 @@ const App = () => {
 							</AppWrapper>
 						</div>
 					</div>
-				</div>
+				</OptionalDisplayedContainer>
 			) : (
 				<AppWrapper style={{ paddingTop: '15px' }}>
 					<Loader
@@ -91,5 +98,5 @@ const App = () => {
 			)}
 		</AppContainer>
 	);
-}
+};
 export default App;
