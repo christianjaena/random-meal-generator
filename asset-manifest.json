@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/react-random-meal-generator/static/js/main.ee7b8f31.chunk.js",
-    "main.js.map": "/react-random-meal-generator/static/js/main.ee7b8f31.chunk.js.map",
-    "runtime-main.js": "/react-random-meal-generator/static/js/runtime-main.acd11326.js",
-    "runtime-main.js.map": "/react-random-meal-generator/static/js/runtime-main.acd11326.js.map",
-    "static/js/2.a7caec6b.chunk.js": "/react-random-meal-generator/static/js/2.a7caec6b.chunk.js",
-    "static/js/2.a7caec6b.chunk.js.map": "/react-random-meal-generator/static/js/2.a7caec6b.chunk.js.map",
-    "index.html": "/react-random-meal-generator/index.html",
-    "precache-manifest.dc70ff5e15292927cd5d420ad121f029.js": "/react-random-meal-generator/precache-manifest.dc70ff5e15292927cd5d420ad121f029.js",
-    "service-worker.js": "/react-random-meal-generator/service-worker.js",
-    "static/js/2.a7caec6b.chunk.js.LICENSE.txt": "/react-random-meal-generator/static/js/2.a7caec6b.chunk.js.LICENSE.txt",
-    "static/media/moroccan-flower.png": "/react-random-meal-generator/static/media/moroccan-flower.6183e7e4.png"
+    "main.js": "/random-meal-generator/static/js/main.ee7b8f31.chunk.js",
+    "main.js.map": "/random-meal-generator/static/js/main.ee7b8f31.chunk.js.map",
+    "runtime-main.js": "/random-meal-generator/static/js/runtime-main.a2193efe.js",
+    "runtime-main.js.map": "/random-meal-generator/static/js/runtime-main.a2193efe.js.map",
+    "static/js/2.df0c0cff.chunk.js": "/random-meal-generator/static/js/2.df0c0cff.chunk.js",
+    "static/js/2.df0c0cff.chunk.js.map": "/random-meal-generator/static/js/2.df0c0cff.chunk.js.map",
+    "index.html": "/random-meal-generator/index.html",
+    "precache-manifest.4448cd0626eb81a202d39d363906483a.js": "/random-meal-generator/precache-manifest.4448cd0626eb81a202d39d363906483a.js",
+    "service-worker.js": "/random-meal-generator/service-worker.js",
+    "static/js/2.df0c0cff.chunk.js.LICENSE.txt": "/random-meal-generator/static/js/2.df0c0cff.chunk.js.LICENSE.txt",
+    "static/media/moroccan-flower.png": "/random-meal-generator/static/media/moroccan-flower.6183e7e4.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.acd11326.js",
-    "static/js/2.a7caec6b.chunk.js",
+    "static/js/runtime-main.a2193efe.js",
+    "static/js/2.df0c0cff.chunk.js",
     "static/js/main.ee7b8f31.chunk.js"
   ]
 }
