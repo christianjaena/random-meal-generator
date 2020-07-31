@@ -2,7 +2,6 @@ import React from 'react';
 import Loader from 'react-loader-spinner';
 import useFetchMeal from './hooks/useFetchMeal';
 import FetchMeal from './components/FetchMeal/FetchMeal.component.jsx';
-import Header from './components/Header/Header.component.jsx';
 import {
 	AppContainer,
 	ResponsiveWrapper,
@@ -14,19 +13,9 @@ import {
 
 const App = () => {
 	const { fetchMeal, state, isFetching, ingredients } = useFetchMeal();
-	const [savedRecipes, setSavedRecipes] = React.useState(
-		localStorage.getItem('savedRecipes')?.split(',') || []
-	);
 
-	const saveRecipe = (recipe, pic) => {
-		let recipeToAdd = [...savedRecipes,  recipe];
-		setSavedRecipes(recipeToAdd);
-		localStorage.setItem('savedRecipes', recipeToAdd);
-	};
-	
 	return (
 		<AppContainer>
-			<Header savedRecipes={savedRecipes} />
 			<FetchMeal fetchMeal={fetchMeal} />
 			{isFetching ? (
 				<OptionalDisplayedContainer state={state}>
@@ -37,11 +26,6 @@ const App = () => {
 							</ImageWrapper>
 							<RecipeWrapper>
 								<h1>{state?.strMeal}</h1>
-								<span
-									onClick={() => saveRecipe(state.strMeal, state.strMealThumb)}
-								>
-									Save
-								</span>
 								<p>
 									<strong>Category:</strong> {state?.strCategory}
 								</p>
