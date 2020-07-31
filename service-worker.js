@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-random-meal-generator/precache-manifest.3ced1d39b7d9c8b70fa8d6000d1f2ba8.js"
+  "/react-random-meal-generator/precache-manifest.dc70ff5e15292927cd5d420ad121f029.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/react-random-meal-generator/static/js/main.0556e5b7.chunk.js",
-    "main.js.map": "/react-random-meal-generator/static/js/main.0556e5b7.chunk.js.map",
+    "main.js": "/react-random-meal-generator/static/js/main.ee7b8f31.chunk.js",
+    "main.js.map": "/react-random-meal-generator/static/js/main.ee7b8f31.chunk.js.map",
     "runtime-main.js": "/react-random-meal-generator/static/js/runtime-main.acd11326.js",
     "runtime-main.js.map": "/react-random-meal-generator/static/js/runtime-main.acd11326.js.map",
     "static/js/2.a7caec6b.chunk.js": "/react-random-meal-generator/static/js/2.a7caec6b.chunk.js",
     "static/js/2.a7caec6b.chunk.js.map": "/react-random-meal-generator/static/js/2.a7caec6b.chunk.js.map",
     "index.html": "/react-random-meal-generator/index.html",
-    "precache-manifest.3ced1d39b7d9c8b70fa8d6000d1f2ba8.js": "/react-random-meal-generator/precache-manifest.3ced1d39b7d9c8b70fa8d6000d1f2ba8.js",
+    "precache-manifest.dc70ff5e15292927cd5d420ad121f029.js": "/react-random-meal-generator/precache-manifest.dc70ff5e15292927cd5d420ad121f029.js",
     "service-worker.js": "/react-random-meal-generator/service-worker.js",
     "static/js/2.a7caec6b.chunk.js.LICENSE.txt": "/react-random-meal-generator/static/js/2.a7caec6b.chunk.js.LICENSE.txt",
     "static/media/moroccan-flower.png": "/react-random-meal-generator/static/media/moroccan-flower.6183e7e4.png"
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.acd11326.js",
     "static/js/2.a7caec6b.chunk.js",
-    "static/js/main.0556e5b7.chunk.js"
+    "static/js/main.ee7b8f31.chunk.js"
   ]
 }
